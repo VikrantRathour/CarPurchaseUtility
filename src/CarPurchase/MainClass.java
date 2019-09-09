@@ -32,6 +32,7 @@ public class MainClass {
                 System.out.println("Press 2 to add new customer record");
                 System.out.println("Press 3 to remove an existing customer");
                 System.out.println("Press 0 to Exit");
+                System.out.println("Press 4 to add a car to existing customer");
                 System.out.println("");
                 input = Integer.parseInt(scan.nextLine());
                 if (input == 0){
@@ -86,6 +87,20 @@ public class MainClass {
 
 
 
+                }
+            case 4:
+                System.out.println("Enter customer id");
+                int addCar = Integer.parseInt(scan.nextLine());
+
+                for (int i = 0; i < customers.size(); i++) {
+                    if (addCar == customers.get(i).getID()){
+                        System.out.println("Enter car model:");
+                        String carModel = scan.nextLine();
+                        System.out.println("Enter car price");
+                        int carPrice = Integer.parseInt(scan.nextLine());
+                        Customer c = customers.get(i);
+                        c.cars.add(carModel, carPrice);
+                    }
                 }
             case 0:
                 break;

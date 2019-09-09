@@ -1,21 +1,15 @@
 package CarPurchase;
 
 abstract class Car {
-    protected int carID;
     protected String carModel;
     protected int carPrice;
 
-    public Car(int carID, String carModel, int carPrice){
-        this.carID = carID;
+    public Car(String carModel, int carPrice){
         this.carModel = carModel;
         this.carPrice = carPrice;
     }
 
-    protected Car() {
-    }
 
-    public int getCarID(){ return carID; }
-    public void setCarID(int carID){ this.carID = carID; }
 
 
     public String getCarModel(){ return carModel; }

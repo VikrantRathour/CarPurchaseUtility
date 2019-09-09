@@ -1,8 +1,7 @@
 package CarPurchase;
 
-public class Hyundai extends Car {
-    public Hyundai(int carID, String carType, String carModel, int carPrice) {
-        this.carID = carID;
+abstract class Hyundai extends Car {
+    protected Hyundai(final String carModel, final int carPrice) {
         this.carModel = carModel;
         this.carPrice = carPrice;
     }

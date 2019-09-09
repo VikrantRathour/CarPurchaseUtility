@@ -32,8 +32,8 @@ public class Customer {
     public ArrayList getCars() {
         return cars;
     }
-    public void setCars(ArrayList cars) {
-        this.cars = cars;
-    }
+//    public void setCars(ArrayList cars) {
+//        this.cars = cars;
+//    }
 
 }
