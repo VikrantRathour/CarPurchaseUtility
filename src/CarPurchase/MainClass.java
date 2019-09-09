@@ -1,3 +1,4 @@
+
 package CarPurchase;
 
 import java.util.*;
@@ -9,9 +10,9 @@ public class MainClass {
         Scanner scan = new Scanner(System.in);
         List<Customer> customers = new ArrayList<>();
 
-        customers.add(new Customer("Rajeev", 1, "Toyota", 1000000));
-        customers.add(new Customer("Ram", 2, "Maruti", 500000));
-        customers.add(new Customer("Shyam", 3, "Hyundai", 800000));
+        customers.add(new Customer(1,"Rajeev"));
+        customers.add(new Customer(2,"Ram"));
+        customers.add(new Customer(3,"Shyam"));
 
         int count = 4;
 
@@ -25,7 +26,7 @@ public class MainClass {
         switch (input){
             case 1:
                 customers.forEach(customer -> {
-                    System.out.println("Name : " + customer.getName() + ", Customer ID : " + customer.getID() + ", Car Purchased : " + customer.getCarName() + ", Price of the Car : Rs." + customer.getCarPrice());
+                    System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                 });
 
                 System.out.println("Press 2 to add new customer record");
@@ -41,18 +42,12 @@ public class MainClass {
                     System.out.println("Enter Customer name :");
                     String name = scan.nextLine();
 
-                    System.out.println("Enter Customer Car Name :");
-                    String carName = scan.nextLine();
-
-                    System.out.println("Enter Customer Car Price :");
-                    int carPrice = Integer.parseInt(scan.nextLine());
-
-                    customers.add(new Customer(name, count, carName, carPrice));
+                    customers.add(new Customer(count, name));
                     count++;
                     System.out.println("Customer Added Successfully!!!!");
                     System.out.println("New Customer List:");
                     customers.forEach(customer -> {
-                        System.out.println("Name : " + customer.getName() + ", Customer ID : " + customer.getID() + ", Car Purchased : " + customer.getCarName() + ", Price of the Car : Rs." + customer.getCarPrice());
+                        System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                     });
                     System.out.println("Press 2 to add another Customer");
                     System.out.println("Press 3 to remove an existing customer");
@@ -66,7 +61,7 @@ public class MainClass {
             case 3:
                 while (input == 3){
                     customers.forEach(customer -> {
-                        System.out.println("Name : " + customer.getName() + ", Customer ID : " + customer.getID() + ", Car Purchased : " + customer.getCarName() + ", Price of the Car : Rs." + customer.getCarPrice());
+                        System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                     });
                     System.out.println("Enter Customer ID to be removed : ");
                     int del = Integer.parseInt(scan.nextLine());
@@ -83,7 +78,7 @@ public class MainClass {
 
                     System.out.println("New Customer List : ");
                     customers.forEach(customer -> {
-                        System.out.println("Name : " + customer.getName() + ", Customer ID : " + customer.getID() + ", Car Purchased : " + customer.getCarName() + ", Price of the Car : Rs." + customer.getCarPrice());
+                        System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                     });
                     System.out.println("Press 3 to remove another Customer : ");
                     System.out.println("Press 0 to exit");
