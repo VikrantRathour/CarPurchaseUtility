@@ -87,19 +87,58 @@ public class MainClass {
 
 
 
-                }
+                }break;
             case 4:
                 System.out.println("Enter customer id");
                 int addCar = Integer.parseInt(scan.nextLine());
-
+//ArrayList<Car> carArrayList = null;
+                Car car=null;
                 for (int i = 0; i < customers.size(); i++) {
                     if (addCar == customers.get(i).getID()){
-                        System.out.println("Enter car model:");
-                        String carModel = scan.nextLine();
-                        System.out.println("Enter car price");
-                        int carPrice = Integer.parseInt(scan.nextLine());
-                        Customer c = customers.get(i);
-                        c.cars.add(carModel, carPrice);
+                        System.out.println("Press 1 to add Maruti");
+                        System.out.println("Press 2 to add Toyota");
+                        System.out.println("Press 3 to add Hyundai");
+                        int model = Integer.parseInt(scan.nextLine());
+                        String carModel;
+                        int carPrice;
+                        ArrayList<Car> carlist;
+                        switch (model){
+                            case 1:
+                                System.out.println("Enter car model:");
+                                carModel = scan.nextLine();
+                                System.out.println("Enter car price");
+                                carPrice = Integer.parseInt(scan.nextLine());
+                                Customer c = customers.get(i);
+                                car = new Maruti(carModel,carPrice);
+                                carlist=new ArrayList<Car>();
+                                carlist.add(car);
+                                c.setCars(carlist);
+                                break;
+                            case 2:
+                                System.out.println("Enter car model:");
+                                carModel = scan.nextLine();
+                                System.out.println("Enter car price");
+                                carPrice = Integer.parseInt(scan.nextLine());
+                                c = customers.get(i);
+                                car = new Toyota(carModel,carPrice);
+                                carlist=new ArrayList<Car>();
+                                carlist.add(car);
+                                c.setCars(carlist);
+                                break;
+                            case 3:
+                                System.out.println("Enter car model:");
+                                carModel = scan.nextLine();
+                                System.out.println("Enter car price");
+                                carPrice = Integer.parseInt(scan.nextLine());
+                                c = customers.get(i);
+                                car = new Hyundai(carModel,carPrice);
+                                carlist=new ArrayList<Car>();
+                                carlist.add(car);
+                                c.setCars(carlist);
+                                break;
+
+                        }
+
                     }
                 }
             case 0:

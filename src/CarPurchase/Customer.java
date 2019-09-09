@@ -29,11 +29,11 @@ public class Customer {
         this.name = name;
     }
 
-    public ArrayList getCars() {
+    public ArrayList<Car> getCars() {
         return cars;
     }
-//    public void setCars(ArrayList cars) {
-//        this.cars = cars;
-//    }
 
+    public void setCars(ArrayList<Car> cars) {
+        this.cars = cars;
+    }
 }
