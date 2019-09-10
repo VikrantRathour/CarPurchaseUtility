@@ -21,6 +21,7 @@ public class MainClass {
         System.out.println("Press 1 for the Customers List");
         System.out.println("Press 2 to add new customer record");
         System.out.println("Press 3 to remove an existing customer");
+        System.out.println("Press 4 to add a car to existing customer");
         System.out.println("Press 0 to exit");
         int input = Integer.parseInt(scan.nextLine());
         switch (input){
@@ -31,8 +32,8 @@ public class MainClass {
 
                 System.out.println("Press 2 to add new customer record");
                 System.out.println("Press 3 to remove an existing customer");
-                System.out.println("Press 0 to Exit");
                 System.out.println("Press 4 to add a car to existing customer");
+                System.out.println("Press 0 to Exit");
                 System.out.println("");
                 input = Integer.parseInt(scan.nextLine());
                 if (input == 0){
@@ -52,6 +53,7 @@ public class MainClass {
                     });
                     System.out.println("Press 2 to add another Customer");
                     System.out.println("Press 3 to remove an existing customer");
+                    System.out.println("Press 4 to add a car to existing customer");
                     System.out.println("Press 0 to Exit");
                     input = Integer.parseInt(scan.nextLine());
                     if (input == 0){
@@ -82,16 +84,16 @@ public class MainClass {
                         System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                     });
                     System.out.println("Press 3 to remove another Customer : ");
+                    System.out.println("Press 4 to add a car to existing customer");
                     System.out.println("Press 0 to exit");
                     input = Integer.parseInt(scan.nextLine());
 
 
 
-                }break;
+                }
             case 4:
                 System.out.println("Enter customer id");
                 int addCar = Integer.parseInt(scan.nextLine());
-//ArrayList<Car> carArrayList = null;
                 Car car=null;
                 for (int i = 0; i < customers.size(); i++) {
                     if (addCar == customers.get(i).getID()){
@@ -138,6 +140,10 @@ public class MainClass {
                                 break;
 
                         }
+                        System.out.println("New Customer List : ");
+                        customers.forEach(customer -> {
+                            System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName()+", Car : "+customer.getCars());
+                        });
 
                     }
                 }

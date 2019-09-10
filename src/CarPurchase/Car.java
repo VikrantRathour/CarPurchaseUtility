@@ -9,7 +9,8 @@ abstract class Car {
         this.carPrice = carPrice;
     }
 
-
+    protected Car() {
+    }
 
 
     public String getCarModel(){ return carModel; }
