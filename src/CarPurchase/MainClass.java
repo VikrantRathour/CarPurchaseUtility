@@ -31,6 +31,7 @@ public class MainClass {
                         System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                     });
 
+                    System.out.println("Press 1 for the Customers List");
                     System.out.println("Press 2 to add new customer record");
                     System.out.println("Press 3 to remove an existing customer");
                     System.out.println("Press 4 to add a car to existing customer");
@@ -52,6 +53,7 @@ public class MainClass {
                         customers.forEach(customer -> {
                             System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                         });
+                        System.out.println("Press 1 for the Customers List");
                         System.out.println("Press 2 to add another Customer");
                         System.out.println("Press 3 to remove an existing customer");
                         System.out.println("Press 4 to add a car to existing customer");
@@ -82,6 +84,8 @@ public class MainClass {
                         customers.forEach(customer -> {
                             System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
                         });
+                        System.out.println("Press 1 for the Customers List");
+                        System.out.println("Press 2 to add another Customer");
                         System.out.println("Press 3 to remove another Customer : ");
                         System.out.println("Press 4 to add a car to existing customer");
                         System.out.println("Press 0 to exit");
@@ -151,6 +155,11 @@ public class MainClass {
                                     System.out.println("Car : " + c.carModel + ", Price : " + c.carPrice);
                                 }
                             });
+                            System.out.println("Press 1 for the Customers List");
+                            System.out.println("Press 2 to add another Customer");
+                            System.out.println("Press 3 to remove another Customer : ");
+                            System.out.println("Press 4 to add a car to existing customer");
+                            System.out.println("Press 0 to exit");
 
 
                         }
