@@ -111,10 +111,12 @@ public class MainClass {
                                 System.out.println("Enter car price");
                                 carPrice = Integer.parseInt(scan.nextLine());
                                 Customer c = customers.get(i);
-                                car = new Maruti(carModel,carPrice);
-                                carlist=new ArrayList<Car>();
-                                carlist.add(car);
-                                c.setCars(carlist);
+                                if (c.getID() == addCar){
+                                    car = new Maruti(carModel,carPrice);
+                                    carlist=new ArrayList<Car>();
+                                    carlist.add(car);
+                                    c.setCars(carlist);
+                                }
                                 break;
                             case 2:
                                 System.out.println("Enter car model:");
@@ -122,10 +124,12 @@ public class MainClass {
                                 System.out.println("Enter car price");
                                 carPrice = Integer.parseInt(scan.nextLine());
                                 c = customers.get(i);
-                                car = new Toyota(carModel,carPrice);
-                                carlist=new ArrayList<Car>();
-                                carlist.add(car);
-                                c.setCars(carlist);
+                                if (c.getID() == addCar){
+                                    car = new Toyota(carModel,carPrice);
+                                    carlist=new ArrayList<Car>();
+                                    carlist.add(car);
+                                    c.setCars(carlist);
+                                }
                                 break;
                             case 3:
                                 System.out.println("Enter car model:");
@@ -133,17 +137,24 @@ public class MainClass {
                                 System.out.println("Enter car price");
                                 carPrice = Integer.parseInt(scan.nextLine());
                                 c = customers.get(i);
-                                car = new Hyundai(carModel,carPrice);
-                                carlist=new ArrayList<Car>();
-                                carlist.add(car);
-                                c.setCars(carlist);
+                                if (c.getID() == addCar){
+                                    car = new Hyundai(carModel,carPrice);
+                                    carlist=new ArrayList<Car>();
+                                    carlist.add(car);
+                                    c.setCars(carlist);
+                                }
                                 break;
 
                         }
                         System.out.println("New Customer List : ");
                         customers.forEach(customer -> {
-                            System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName()+", Car : "+customer.getCars());
+                            System.out.println("Customer ID : " + customer.getID() + "Name : " + customer.getName());
+                            for (Car c : customer.getCars()){
+                                System.out.println("Car : " + c.carModel + ", Price : " + c.carPrice);
+                            }
                         });
+
+
 
                     }
                 }
